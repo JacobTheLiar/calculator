@@ -8,7 +8,7 @@ public class CalculatorImpl implements Calculator, PressNumber, Operations {
     String disp = "0";
     String mem = "0";
 
-    char operation = 'x';
+    char operation = '=';
 
 
     @Override
@@ -25,6 +25,15 @@ public class CalculatorImpl implements Calculator, PressNumber, Operations {
             return "E";
         NumberFormat formatter = new DecimalFormat("0.#########");
         return formatter.format(Double.parseDouble(disp));
+    }
+
+    @Override
+    public String memoryDisplay(){
+        NumberFormat formatter = new DecimalFormat("0.#########");
+        String result = formatter.format(Double.parseDouble(mem));
+        result += " "+operation;
+
+        return result;
     }
 
     @Override
@@ -69,7 +78,7 @@ public class CalculatorImpl implements Calculator, PressNumber, Operations {
     @Override
     public void result() {
         doOperation();
-        operation = 'x';
+        operation = '=';
     }
 
     @Override
@@ -81,7 +90,7 @@ public class CalculatorImpl implements Calculator, PressNumber, Operations {
     public void clearEverything() {
         disp = "0";
         mem = "0";
-        operation = 'x';
+        operation = '=';
     }
 
     @Override

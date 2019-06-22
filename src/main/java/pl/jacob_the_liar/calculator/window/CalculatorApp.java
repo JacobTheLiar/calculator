@@ -31,6 +31,7 @@ public class CalculatorApp implements Window, Refresh {
             {"±", "s"}, {"C", "s"}, {"CE", "s"}, {"=", "s"}
             };
     private Label lblDisplay;
+    private Label lblMemDisplay;
     private Calculator calculator;
 
 
@@ -48,12 +49,13 @@ public class CalculatorApp implements Window, Refresh {
         VBox back = new VBox();
 
         back.getChildren().add(getSpace());
+        back.getChildren().add(getMemoryDisplay());
         back.getChildren().add(getDisplay());
         back.getChildren().add(getSpace());
         back.getChildren().add(getKeyboard());
         back.setBackground(GRAY.value());
 
-        Scene scene = new Scene(back, 222, 340);
+        Scene scene = new Scene(back, 222, 364);
         primaryStage.setScene(scene);
         primaryStage.show();
 
@@ -76,6 +78,25 @@ public class CalculatorApp implements Window, Refresh {
         keyboard.getChildren().add(keys);
 
         return keyboard;
+    }
+
+    private Node getMemoryDisplay() {
+        HBox box = new HBox();
+
+        box.getChildren().add(getSpace());
+
+        lblMemDisplay = new Label("123456 +");
+        lblMemDisplay.setMinWidth(216);
+
+        lblMemDisplay.setFont(Font.font("", FontWeight.BOLD, 16));
+//        lblDisplay.setTextAlignment(TextAlignment.RIGHT);
+//        lblDisplay.setAlignment(Pos.CENTER_RIGHT);
+        lblMemDisplay.setBackground(WHITE.value());
+
+        box.getChildren().add(lblMemDisplay);
+        box.getChildren().add(getSpace());
+
+        return box;
     }
 
     private Node getDisplay() {
@@ -123,5 +144,6 @@ public class CalculatorApp implements Window, Refresh {
     @Override
     public void refreshControls() {
         lblDisplay.setText(calculator.display());
+        lblMemDisplay.setText(calculator.memoryDisplay());
     }
 }

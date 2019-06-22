@@ -4,6 +4,7 @@ public interface Calculator extends PressNumber {
 
         void pressNumber(Object number);
         String display();
+        String memoryDisplay();
         void add();
         void sub();
         void div();
