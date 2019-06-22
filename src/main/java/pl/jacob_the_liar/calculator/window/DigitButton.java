@@ -2,6 +2,8 @@ package pl.jacob_the_liar.calculator.window;
 
 import pl.jacob_the_liar.calculator.core.PressNumber;
 
+import static pl.jacob_the_liar.calculator.window.BackgroundFactory.GREEN;
+
 public class DigitButton extends ClickButton {
 
     private final String digit;
@@ -14,7 +16,7 @@ public class DigitButton extends ClickButton {
         this.pressNumber = pressNumber;
         this.refresh = refresh;
 
-        this.setBackground(BackgroundFactory.green());
+        this.setBackground(GREEN.value());
 
         this.setOnMouseClicked(event -> {
             pressNumber.pressNumber(digit);

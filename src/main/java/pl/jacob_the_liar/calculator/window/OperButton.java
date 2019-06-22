@@ -2,6 +2,9 @@ package pl.jacob_the_liar.calculator.window;
 
 import pl.jacob_the_liar.calculator.core.Operations;
 
+import static pl.jacob_the_liar.calculator.window.BackgroundFactory.RED;
+import static pl.jacob_the_liar.calculator.window.BackgroundFactory.YELLOW;
+
 public class OperButton extends ClickButton {
 
     private final String operation;
@@ -16,9 +19,9 @@ public class OperButton extends ClickButton {
 
 
         if (operation.contains("C"))
-            this.setBackground(BackgroundFactory.red());
+            this.setBackground(RED.value());
         else
-            this.setBackground(BackgroundFactory.yellow());
+            this.setBackground(YELLOW.value());
 
         this.setOnMouseClicked(event -> {
             doOperation();

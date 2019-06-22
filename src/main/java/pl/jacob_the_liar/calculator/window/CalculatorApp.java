@@ -16,6 +16,9 @@ import javafx.stage.Stage;
 import pl.jacob_the_liar.calculator.core.Calculator;
 import pl.jacob_the_liar.calculator.core.CalculatorImpl;
 
+import static pl.jacob_the_liar.calculator.window.BackgroundFactory.GRAY;
+import static pl.jacob_the_liar.calculator.window.BackgroundFactory.WHITE;
+
 
 public class CalculatorApp implements Window, Refresh {
 
@@ -48,7 +51,7 @@ public class CalculatorApp implements Window, Refresh {
         back.getChildren().add(getDisplay());
         back.getChildren().add(getSpace());
         back.getChildren().add(getKeyboard());
-        back.setBackground(BackgroundFactory.gray());
+        back.setBackground(GRAY.value());
 
         Scene scene = new Scene(back, 222, 340);
         primaryStage.setScene(scene);
@@ -86,7 +89,7 @@ public class CalculatorApp implements Window, Refresh {
         lblDisplay.setFont(Font.font("", FontWeight.BOLD, 36));
         lblDisplay.setTextAlignment(TextAlignment.RIGHT);
         lblDisplay.setAlignment(Pos.CENTER_RIGHT);
-        lblDisplay.setBackground(BackgroundFactory.white());
+        lblDisplay.setBackground(WHITE.value());
 
         box.getChildren().add(lblDisplay);
         box.getChildren().add(getSpace());

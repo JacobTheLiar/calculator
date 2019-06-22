@@ -5,6 +5,8 @@ import javafx.scene.layout.Background;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
+import static pl.jacob_the_liar.calculator.window.BackgroundFactory.BLUE;
+
 public class ClickButton extends Button {
 
     private Background back;
@@ -19,7 +21,7 @@ public class ClickButton extends Button {
 
     private void setOnMousePressed() {
         back = getBackground();
-        setBackground(BackgroundFactory.blue());
+        setBackground(BLUE.value());
     }
 
     private void setOnMouseReleased() {

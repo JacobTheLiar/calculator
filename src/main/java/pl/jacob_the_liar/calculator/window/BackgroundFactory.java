@@ -6,71 +6,36 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
-public class BackgroundFactory {
+enum BackgroundFactory {
 
-    public static Background green(){
+    GREEN (204, 255, 153),
+    RED (255, 153, 153),
+    YELLOW (255, 255, 153),
+    BLUE (153, 153, 255),
+    WHITE (255, 255, 255),
+    GRAY (105, 105, 105);
+
+
+    private final int r;
+    private final int g;
+    private final int b;
+
+    BackgroundFactory(int red, int green, int blue){
+        r = red;
+        g = green;
+        b = blue;
+    }
+
+    Background value(){
         Background background = new Background(
                 new BackgroundFill(
-                        Color.rgb(204, 255, 153),
+                        Color.rgb(r, g, b),
                         CornerRadii.EMPTY,
                         Insets.EMPTY
                 )
         );
         return background;
-    }
-    public static Background red(){
-        Background background = new Background(
-                new BackgroundFill(
-                        Color.rgb(255, 153, 153),
-                        CornerRadii.EMPTY,
-                        Insets.EMPTY
-                )
-        );
-        return background;
-    }
-    public static Background yellow(){
-        Background background = new Background(
-                new BackgroundFill(
-                        Color.rgb(255, 255, 153),
-                        CornerRadii.EMPTY,
-                        Insets.EMPTY
-                )
-        );
-        return background;
+
     }
 
-    public static Background blue(){
-        Background background = new Background(
-                new BackgroundFill(
-                        Color.rgb(153, 153, 255),
-                        CornerRadii.EMPTY,
-                        Insets.EMPTY
-                )
-        );
-        return background;
-    }
-
-
-    public static Background white(){
-        Background background = new Background(
-                new BackgroundFill(
-                        Color.rgb(255, 255, 255),
-                        CornerRadii.EMPTY,
-                        Insets.EMPTY
-                )
-        );
-        return background;
-    }
-
-
-    public static Background gray(){
-        Background background = new Background(
-                new BackgroundFill(
-                        Color.rgb(105, 105, 105),
-                        CornerRadii.EMPTY,
-                        Insets.EMPTY
-                )
-        );
-        return background;
-    }
 }
